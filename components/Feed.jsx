@@ -25,7 +25,7 @@ const Feed = () => {
   const promptFilter = (text) =>{
     const regex = new RegExp(text,"i");
     return posts.filter(
-      (item) => regex.test(item.creator.username) || regex.test(item.tag) || regex.test(item.prompt)
+      (item) => regex.test(item.creator.username) || regex.test(item.title) || regex.test(item.tag) || regex.test(item.prompt)
 
     );
   }

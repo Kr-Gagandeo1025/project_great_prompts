@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
+  console.log(post)
   const {data:session} = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -44,6 +45,7 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
           />
         </div>
       </div>
+      <p className="my-2 font-satoshi text-l text-gray-700 font-bold">{post.title}</p>
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
       <p className="font-inter text-sm blue_gradient cursor-pointer" onClick={()=>handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
